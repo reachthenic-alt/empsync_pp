@@ -1,0 +1,102 @@
+{
+  "employees": [
+    {
+      "id": "EMP001",
+      "name": "Touch Sovannareach",
+      "email": "sovannareach@empsync.com",
+      "password": "admin123",
+      "role": "admin",
+      "position": "System Administrator",
+      "department": "IT",
+      "phone": "012-345-678",
+      "salary": 1500,
+      "status": "active",
+      "joinDate": "2023-01-15",
+      "avatar": null
+    },
+    {
+      "id": "EMP002",
+      "name": "Chhun Kakda",
+      "email": "kakda@empsync.com",
+      "password": "hr123",
+      "role": "hr",
+      "position": "HR Manager",
+      "department": "Human Resources",
+      "phone": "012-456-789",
+      "salary": 1200,
+      "status": "active",
+      "joinDate": "2023-03-01",
+      "avatar": null
+    },
+    {
+      "id": "EMP003",
+      "name": "Tep Panhasak",
+      "email": "panhasak@empsync.com",
+      "password": "emp123",
+      "role": "employee",
+      "position": "Frontend Developer",
+      "department": "IT",
+      "phone": "012-567-890",
+      "salary": 900,
+      "status": "active",
+      "joinDate": "2023-06-15",
+      "avatar": null
+    },
+    {
+      "id": "EMP004",
+      "name": "Sok Dara",
+      "email": "dara@empsync.com",
+      "password": "emp123",
+      "role": "employee",
+      "position": "Marketing Executive",
+      "department": "Marketing",
+      "phone": "012-678-901",
+      "salary": 850,
+      "status": "active",
+      "joinDate": "2023-08-01",
+      "avatar": null
+    },
+    {
+      "id": "EMP005",
+      "name": "Chan Sokha",
+      "email": "sokha@empsync.com",
+      "password": "emp123",
+      "role": "employee",
+      "position": "Accountant",
+      "department": "Finance",
+      "phone": "012-789-012",
+      "salary": 950,
+      "status": "active",
+      "joinDate": "2022-11-10",
+      "avatar": null
+    },
+    {
+      "id": "EMP006",
+      "name": "Lim Vichet",
+      "email": "vichet@empsync.com",
+      "password": "emp123",
+      "role": "employee",
+      "position": "Sales Executive",
+      "department": "Sales",
+      "phone": "012-890-123",
+      "salary": 800,
+      "status": "active",
+      "joinDate": "2024-01-20",
+      "avatar": null
+    },
+    {
+      "id": "EMP007",
+      "name": "Meas Channary",
+      "email": "channary@empsync.com",
+      "password": "emp123",
+      "role": "employee",
+      "position": "UI/UX Designer",
+      "department": "IT",
+      "phone": "012-901-234",
+      "salary": 1000,
+      "status": "inactive",
+      "joinDate": "2023-05-01",
+      "avatar": null
+    }
+  ]
+}
