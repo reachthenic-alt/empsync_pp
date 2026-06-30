@@ -1,0 +1,76 @@
+{
+  "payroll": [
+    {
+      "id": "PR001",
+      "employeeId": "EMP001",
+      "employeeName": "Touch Sovannareach",
+      "month": "2026-06",
+      "baseSalary": 1500,
+      "bonus": 100,
+      "deductions": 50,
+      "netPay": 1550,
+      "status": "paid",
+      "payDate": "2026-06-30"
+    },
+    {
+      "id": "PR002",
+      "employeeId": "EMP002",
+      "employeeName": "Chhun Kakda",
+      "month": "2026-06",
+      "baseSalary": 1200,
+      "bonus": 50,
+      "deductions": 30,
+      "netPay": 1220,
+      "status": "paid",
+      "payDate": "2026-06-30"
+    },
+    {
+      "id": "PR003",
+      "employeeId": "EMP003",
+      "employeeName": "Tep Panhasak",
+      "month": "2026-06",
+      "baseSalary": 900,
+      "bonus": 0,
+      "deductions": 20,
+      "netPay": 880,
+      "status": "paid",
+      "payDate": "2026-06-30"
+    },
+    {
+      "id": "PR004",
+      "employeeId": "EMP004",
+      "employeeName": "Sok Dara",
+      "month": "2026-06",
+      "baseSalary": 850,
+      "bonus": 30,
+      "deductions": 15,
+      "netPay": 865,
+      "status": "pending",
+      "payDate": null
+    },
+    {
+      "id": "PR005",
+      "employeeId": "EMP005",
+      "employeeName": "Chan Sokha",
+      "month": "2026-06",
+      "baseSalary": 950,
+      "bonus": 0,
+      "deductions": 25,
+      "netPay": 925,
+      "status": "pending",
+      "payDate": null
+    },
+    {
+      "id": "PR006",
+      "employeeId": "EMP006",
+      "employeeName": "Lim Vichet",
+      "month": "2026-06",
+      "baseSalary": 800,
+      "bonus": 20,
+      "deductions": 10,
+      "netPay": 810,
+      "status": "pending",
+      "payDate": null
+    }
+  ]
+}

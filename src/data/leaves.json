@@ -1,0 +1,76 @@
+{
+  "leaves": [
+    {
+      "id": "LV001",
+      "employeeId": "EMP004",
+      "employeeName": "Sok Dara",
+      "type": "Annual",
+      "startDate": "2026-07-02",
+      "endDate": "2026-07-04",
+      "days": 3,
+      "reason": "Family trip",
+      "status": "approved",
+      "appliedDate": "2026-06-20"
+    },
+    {
+      "id": "LV002",
+      "employeeId": "EMP005",
+      "employeeName": "Chan Sokha",
+      "type": "Sick",
+      "startDate": "2026-06-28",
+      "endDate": "2026-06-28",
+      "days": 1,
+      "reason": "Flu",
+      "status": "pending",
+      "appliedDate": "2026-06-27"
+    },
+    {
+      "id": "LV003",
+      "employeeId": "EMP003",
+      "employeeName": "Tep Panhasak",
+      "type": "Annual",
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-12",
+      "days": 3,
+      "reason": "Personal matters",
+      "status": "pending",
+      "appliedDate": "2026-06-29"
+    },
+    {
+      "id": "LV004",
+      "employeeId": "EMP006",
+      "employeeName": "Lim Vichet",
+      "type": "Unpaid",
+      "startDate": "2026-06-15",
+      "endDate": "2026-06-16",
+      "days": 2,
+      "reason": "Family emergency",
+      "status": "rejected",
+      "appliedDate": "2026-06-10"
+    },
+    {
+      "id": "LV005",
+      "employeeId": "EMP002",
+      "employeeName": "Chhun Kakda",
+      "type": "Sick",
+      "startDate": "2026-06-25",
+      "endDate": "2026-06-26",
+      "days": 2,
+      "reason": "Medical checkup",
+      "status": "approved",
+      "appliedDate": "2026-06-22"
+    },
+    {
+      "id": "LV006",
+      "employeeId": "EMP003",
+      "employeeName": "Tep Panhasak",
+      "type": "Annual",
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-02",
+      "days": 2,
+      "reason": "Rest",
+      "status": "approved",
+      "appliedDate": "2026-04-20"
+    }
+  ]
+}
