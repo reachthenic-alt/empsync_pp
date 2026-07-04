@@ -3,7 +3,7 @@
     <!-- Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h1 class="text-xl font-semibold text-zinc-900">Employees</h1>
+        <h1 class="text-xl font-semibold text-zinc-900 dark:text-white">Employees</h1>
         <p class="text-sm text-zinc-500 mt-0.5">{{ filteredEmployees.length }} employee{{ filteredEmployees.length !== 1 ? 's' : '' }}</p>
       </div>
       <button
