@@ -1,11 +1,15 @@
 <template>
-  <div class="flex min-h-screen bg-zinc-50">
+  <div class="flex min-h-screen bg-zinc-50 dark:bg-zinc-950">
 
     <!-- Sidebar -->
-    <aside :class="['flex flex-col transition-all duration-300 bg-zinc-900', sidebarOpen ? 'w-56' : 'w-16']">
+    <aside :class="[
+      'flex flex-col transition-all duration-300 border-r border-zinc-200 dark:border-zinc-800',
+      'bg-white dark:bg-zinc-900',
+      sidebarOpen ? 'w-56' : 'w-16'
+    ]">
 
       <!-- Logo -->
-      <div class="flex items-center gap-3 px-4 py-5 border-b border-zinc-800">
+      <div class="flex items-center gap-3 px-4 py-5 border-b border-zinc-200 dark:border-zinc-800">
         <div class="flex-shrink-0 w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -14,7 +18,7 @@
             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
         </div>
-        <span v-if="sidebarOpen" class="text-white font-semibold text-sm">EmpSync</span>
+        <span v-if="sidebarOpen" class="text-zinc-900 dark:text-white font-semibold text-sm">EmpSync</span>
       </div>
 
       <!-- Nav links -->
@@ -23,8 +27,8 @@
           v-for="item in filteredNavItems"
           :key="item.name"
           :to="item.to"
-          class="flex items-center gap-3 px-2 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors duration-150"
-          active-class="bg-indigo-600 text-white hover:bg-indigo-700"
+          class="flex items-center gap-3 px-2 py-2 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-zinc-800 transition-colors duration-150"
+          active-class="bg-indigo-50 dark:bg-zinc-800 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50"
         >
           <span class="flex-shrink-0 w-5 h-5" v-html="item.icon"></span>
           <span v-if="sidebarOpen" class="text-sm font-medium">{{ item.label }}</span>
@@ -32,14 +36,14 @@
       </nav>
 
       <!-- User info + logout -->
-      <div class="border-t border-zinc-800 px-2 py-4 space-y-1">
+      <div class="border-t border-zinc-200 dark:border-zinc-800 px-2 py-4 space-y-1">
         <div v-if="sidebarOpen" class="px-2 py-2 mb-1">
-          <p class="text-xs font-medium text-white truncate">{{ authStore.user?.name }}</p>
-          <p class="text-xs text-zinc-400 capitalize">{{ authStore.user?.role }}</p>
+          <p class="text-xs font-medium text-zinc-900 dark:text-white truncate">{{ authStore.user?.name }}</p>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 capitalize">{{ authStore.user?.role }}</p>
         </div>
         <button
           @click="handleLogout"
-          class="w-full flex items-center gap-3 px-2 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors duration-150"
+          class="w-full flex items-center gap-3 px-2 py-2 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-zinc-800 transition-colors duration-150"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
@@ -55,10 +59,10 @@
     <div class="flex-1 flex flex-col min-w-0">
 
       <!-- Navbar -->
-      <header class="h-14 bg-white border-b border-zinc-200 flex items-center justify-between px-4">
+      <header class="h-14 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4">
         <button
           @click="sidebarOpen = !sidebarOpen"
-          class="p-1.5 rounded-lg text-zinc-500 hover:bg-zinc-100 transition-colors"
+          class="p-1.5 rounded-lg text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-400 transition-colors"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"/>
@@ -68,8 +72,30 @@
         </button>
 
         <div class="flex items-center gap-3">
-          <span class="text-sm text-zinc-500">{{ currentDate }}</span>
-          <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-medium text-xs">
+          <span class="text-sm text-zinc-500 dark:text-zinc-400">{{ currentDate }}</span>
+
+          <!-- Dark mode toggle -->
+          <button
+            @click="themeStore.toggle()"
+            class="p-1.5 rounded-lg text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 dark:text-zinc-400 transition-colors"
+          >
+            <svg v-if="themeStore.isDark" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-medium text-xs">
             {{ initials }}
           </div>
         </div>
@@ -88,9 +114,11 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth.js'
+import { useThemeStore } from '../../stores/theme.js'
 
 const router = useRouter()
 const authStore = useAuthStore()
+const themeStore = useThemeStore()
 const sidebarOpen = ref(true)
 
 const currentDate = computed(() => {
